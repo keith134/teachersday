@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Teachers' Day!</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: url('james ed.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            height: 100vh;
+            overflow-y: auto; /* Allow scrolling */
+        }
+        
+        h1 {
+            font-size: 3rem;
+            text-shadow: 2px 2px 4px #000000;
+            margin: 20px 0;
+        }
+        
+        h2 {
+            font-size: 2rem;
+            text-shadow: 1px 1px 3px #000000;
+            margin: 10px 0;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            background-color: rgba(22, 14, 14, 0.555);
+            border: none;
+            border-radius: 5px;
+            color: #ffffff;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin: 20px 0;
+        }
+
+        button:hover {
+            background-color: rgba(255, 255, 255, 0.4);
+        }
+
+        .message-container {
+            display: flex; /* Change to flex for better layout */
+            flex-direction: column;
+            align-items: center;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: rgba(0, 0, 0, 0.7);
+            max-width: 800px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+            width: 90%;
+            max-height: 60vh; /* Limit height to make scrolling possible */
+            overflow-y: auto; /* Enable vertical scrolling */
+        }
+
+        .message {
+            background: rgba(19, 13, 13, 0.548);
+            margin: 10px;
+            padding: 15px;
+            border-radius: 10px;
+            transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .message.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .logo {
+            max-width: 150px;
+            margin-bottom: 20px;
+        }
+
+        audio {
+            display: none; /* Hide the audio player */
+        }
+    </style>
+</head>
+<body>
+    <h1>Happy Teachers' Day!</h1>
+    <h2>by Grade 11 ICT Acacia</h2>
+    <img src="your-logo (2).png" alt="Logo" class="logo">
+
+    <button id="show-messages-btn">Show Messages</button>
+
+    <div class="message-container" id="message-container">
+        <!-- Messages -->
+        <div class="message" id="message1">To: Sir James<br>Happy World Teachers' Day, Sir! Thank you so much for being the best and most lively teacher in Senior High School. Despite us being a bit stubborn, and sometimes even tiring, you still continue to teach us with patience and kindness. We are truly grateful for being in your advisory class, and even though it's not your subject, you find ways to ensure we don't get confused. Once again, thank you so much, Sir! Happy Teachers' Day!<br>From: Class President</div>
+
+        <div class="message" id="message2">From: Michaela<br>To all the teachers, I just wanted to express my gratitude for your support, efforts, and dedication to our class. Your passion for teaching makes learning enjoyable, and I appreciate all the extra help you've provided. Thank you for teaching us! Happy Teacher's Day!</div>
+
+        <div class="message" id="message3">To All My Teachers<br>Happy Teachers' Day to all of my subject teachers! Thank you for everything you’ve taught us. I am truly thankful for all the knowledge I’ve gained, and I’ve also built the confidence to speak in front of others. Thank you for helping me improve my skills!</div>
+
+        <div class="message" id="message4">Dear Teachers,<br>Thank you for being such dedicated and inspiring educators! We have truly enjoyed learning from you and have gained so much. Your hard work does not go unnoticed. Happy Teacher's Day!</div>
+
+        <div class="message" id="message5">To: Sir James<br>Happy Teachers' Day, Sir! Thank you for all your efforts towards us and for your patience in teaching. We are grateful to be one of your students, even though we're sometimes naughty. Sorry about that! May God bless you and your family, Sir. Once again, Happy Teachers' Day!<br>From: The Class</div>
+
+        <div class="message" id="message6">From: Again<br>Happy Teachers' Day to all the teachers! Thank you for guiding and teaching us.</div>
+
+        <div class="message" id="message7">From: Jumalon<br>Happy Teachers' Day to all the teachers! Thank you for all your teachings.</div>
+
+        <div class="message" id="message8">Ma'am/Sir,<br>Happy Teacher's Day! Thank you so much for all your efforts in ensuring we learn. We know it's not easy, but you always give your best. We salute you! We appreciate you so much!</div>
+
+        <div class="message" id="message9">To: Sir James<br>Happy Teachers' Day, Sir! Thank you for your support and for teaching us important lessons in life. Your dedication inspires me, and I’m grateful for everything you’ve taught me. Thank you for helping us when we struggled. Once again, thank you, Sir!<br>From: Albano</div>
+
+        <div class="message" id="message10">To: Ma'am Caselyn<br>Happy Teacher's Day, Ma'am Caselyn! Thank you for your support and for teaching us valuable lessons. I am grateful for everything you've taught us and for being there when we faced challenges. Once again, thank you, Ma'am!<br>From: Albano</div>
+
+        <div class="message" id="message11">To: Sir James<br>Happy Teachers' Day, Sir! Thank you for all your teachings, even though we are a bit mischievous. Because of your guidance, I’ve learned so much and will continue to learn more. Thank you for everything!</div>
+
+        <div class="message" id="message12">To: Sir James<br>Happy Teachers' Day! Thank you for all your efforts, especially for understanding us even when we are hard-headed. We appreciate your dedication in teaching and reminding us of our missed assignments. Once again, Happy Teachers' Day! May God bless you and your family.</div>
+
+        <div class="message" id="message13">To: Sir James<br>Happy Teachers' Day! Thank you, Sir, for all your efforts, dedication, and patience in teaching us. We truly appreciate your hard work, and we are lucky to be your students. We promise to keep everything we’ve learned from you in our minds and hearts. Thank you so much, and may God bless you and your family. Once again, Happy Teachers' Day, Sir!</div>
+
+        <div class="message" id="message14">From: Chinue<br>HAPPY TEACHERS' DAY! Thank you for all your sacrifices and for explaining things that we didn’t understand. You are always the best teacher for us! 🥳💖</div>
+
+        <div class="message" id="message15">From: Galagar<br>Hi, Sir! Happy Teachers' Day! Thank you for explaining things in ways we can understand. We know we’re not always the best students, but we are thankful you're always there for us. You’re the best teacher to us! 💖</div>
+
+        <div class="message" id="message16">From: Niño Valencia<br>Happy Teachers' Day, Sir! Thank you for teaching us and for being kind!</div>
+
+        <div class="message" id="message17">From: John Wayne A. Stampador<br>Happy Teachers' Day, Sir! Thank you for teaching us and for staying kind!</div>
+
+        <div class="message" id="message18">To: Sir James<br>Happy Teachers' Day, Sir! Thank you for teaching us. I hope that other students will learn from you as much as we have!</div>
+
+        <div class="message" id="message19">To All Teachers<br>Thank you so much for your service! Because of you, we continue to grow in our learning. Thank you!</div>
+
+        <div class="message" id="message20">To: Sir James<br>Happy Teacher's Day, Sir! Your classes are the best! We learn so much! Thank you for being the best teacher!<br>From: Jeno, your student</div>
+
+        <div class="message" id="message21">To All Teachers<br>Happy Teacher's Day! Thank you for guiding and supporting us. We appreciate all your efforts!</div>
+    </div>
+
+    <!-- Audio Player -->
+    <audio id="background-audio" src="juan karlos - Through the Years (From Lolo and the Kid) Official Music Video.mp3"></audio>
+
+    <script>
+        // Show messages one by one
+        const messages = document.querySelectorAll('.message');
+        let currentMessage = 0;
+
+        // Get elements
+        const messageContainer = document.getElementById('message-container');
+        const showMessagesBtn = document.getElementById('show-messages-btn');
+        const audio = document.getElementById('background-audio');
+
+        // Function to show messages
+        function showMessage() {
+            messageContainer.style.display = 'flex'; // Show the message container
+            if (currentMessage < messages.length) {
+                messages[currentMessage].classList.add('visible');
+                currentMessage++;
+                setTimeout(showMessage, 3000); // Show each message for 3 seconds
+            }
+        }
+
+        // Add event listener to the button
+        showMessagesBtn.addEventListener('click', () => {
+            showMessagesBtn.style.display = 'none'; // Hide the button
+            audio.play(); // Play the audio when the button is clicked
+            showMessage(); // Start showing messages
+        });
+    </script>
+</body>
+</html>
